@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM API for HTML modification</title>
+</head>
+<body style="background-color:rgb(187, 234, 250);text-align:center">
+    <h1 id="hdr1">Here's your ice cream</h1>
+    <img style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%" id="img1" src="https://5.imimg.com/data5/EO/WH/MY-31473988/strawberry-ice-cream-cone.jpg" alt="Ice cream is not ready">
+    <a href="#" id="p1" onclick="eat()">Click here to eat</a>
+    <script>
+        //Write the code here
+           function eat()
+           {
+            document.body.style.backgroundColor="green";
+            document.getElementById("hdr1").innerHtml="Hope you liked it!";
+            document.getElementById("img1").src="https://tse4.mm.bing.net/th?id=OIP.Fou6cXs3MNCFir1JBD1HbQHaHa&pid=Api&P=0";
+            document.getElementById("p1").innerText="Click to refill"
+           document.getElementById("p1").removeEventListener("click",()=>eat());
+            document.getElementById("p1").addEventListener("click",()=>sample());
+            
+           }
+       function sample()
+       {
+        document.body.style.backgroundColor="lightblue";
+            document.getElementById("hdr1").innerHtml="Here's a re-filled cone!";
+            document.getElementById("img1").src="https://5.imimg.com/data5/EO/WH/MY-31473988/strawberry-ice-cream-cone.jpg";
+           // document.getElementById("p1").innerText="Enjoy yourself"
+            document.getElementById("p1").removeEventListener("click",()=>eat());
+            
+       }
+    </script>
+</body>
+</html>
